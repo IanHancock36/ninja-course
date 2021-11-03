@@ -3,25 +3,25 @@ import './App.css';
 
 
 function App() {
-  const [name, setName]= useState('mario')
+
   const [events,setEvents] = useState([
     {title: "Ian loves Cake", id:1},
     {title: "Ian eats the Cake", id:2},
     {title: "Ian stomach is upset", id:3},
   ])
-  const handleCLick = () => {
-    setName("steve")
-
-    console.log(name)
+  const handleCLick = (id) => {
+      console.log(id)
+   setEvents(events.filter((event)=> {
+      return id !== event.id
+   }))
   }
 
   return (
     <div className="App">
-      <h1> my name is {name}</h1>
-      <button onClick ={handleCLick}>Change Name</button>
-    {events.map((event)=>(
+    {events.map((event, index)=>(
       <div key={event.id}>
-        <h2>{event.title}</h2>
+        <h2>{index} - {event.title}</h2>
+        <button onClick={()=> handleCLick(event.id)}>delete event</button>
       </div>
     ))}
     
