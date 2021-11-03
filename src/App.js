@@ -11,9 +11,12 @@ function App() {
   ])
   const handleCLick = (id) => {
       console.log(id)
-   setEvents(events.filter((event)=> {
-      return id !== event.id
-   }))
+ setEvents((prevEvents) => {
+   return preEvents.filter((event)=>{
+     return id !== event.id
+   })
+ })
+ 
   }
 
   return (
