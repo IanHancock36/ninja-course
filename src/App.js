@@ -19,8 +19,14 @@ function App() {
     <div className="App">
       <h1> my name is {name}</h1>
       <button onClick ={handleCLick}>Change Name</button>
-   
+    {events.map((event)=>(
+      <div key={event.id}>
+        <h2>{event.title}</h2>
+      </div>
+    ))}
+    
     </div>
+
   );
 }
 
