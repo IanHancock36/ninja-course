@@ -27,7 +27,7 @@ function App() {
         <div>
         <button onClick={() => setShowEvents(true)}>Show Event</button>
       </div>
-    {events.map((event, index)=>(
+    {showEvents && events.map((event, index)=>(
       <div key={event.id}>
         <h2>{index} - {event.title}</h2>
         <button onClick={()=> handleCLick(event.id)}>delete event</button>
