@@ -3,7 +3,7 @@ import './App.css';
 
 
 function App() {
-
+ const [showEvents, setShowEvents] = useState(true)
   const [events,setEvents] = useState([
     {title: "Ian loves Cake", id:1},
     {title: "Ian eats the Cake", id:2},
@@ -12,7 +12,7 @@ function App() {
   const handleCLick = (id) => {
       console.log(id)
  setEvents((prevEvents) => {
-   return preEvents.filter((event)=>{
+   return prevEvents.filter((event)=>{
      return id !== event.id
    })
  })
@@ -21,6 +21,12 @@ function App() {
 
   return (
     <div className="App">
+        <div>
+        <button onClick={() => setShowEvents(false)}>Hide Event</button>
+        </div>
+        <div>
+        <button onClick={() => setShowEvents(true)}>Show Event</button>
+      </div>
     {events.map((event, index)=>(
       <div key={event.id}>
         <h2>{index} - {event.title}</h2>
