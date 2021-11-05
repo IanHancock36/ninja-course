@@ -18,10 +18,10 @@ function App() {
     })
 
   }
-
+const Mysubtitle = "All the latest events in my crazy brain"
   return (
     <div className="App">
-      <Title/>
+      <Title title="events in your area" subtitle={Mysubtitle}/>
       {showEvents && (<div>
         <button onClick={() => setShowEvents(false)}>Hide Event</button>
       </div>
