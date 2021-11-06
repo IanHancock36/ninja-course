@@ -3,7 +3,7 @@ import './App.css';
 import Title from './components/Title'
 import Modal from './components/Modal'
 function App() {
-  const [showModal, setShowModel] = useState(true)
+  const [showModal, setShowModel] = useState(false)
   const [showEvents, setShowEvents] = useState(true)
   const [events, setEvents] = useState([
     { title: "Ian loves Cake", id: 1 },
@@ -19,6 +19,9 @@ function App() {
     })
 
   }
+const handleClose = () => {
+  setShowModel(false)
+}
   const Mysubtitle = "All the latest events in my crazy brain"
   return (
     <div className="App">
@@ -42,9 +45,14 @@ function App() {
         <h2>10% off Coupon Code!!</h2>
         <p>Use the code OHMYGOD! at checkout.</p>
       </Modal> */}
-      <Modal>
+      {showModal && 
+      <Modal handleClose={handleClose}>
         <h2>HEY THERE YOU KNOW ME ALL TO WELL</h2>
-      </Modal>
+        </Modal>}
+        <div>
+          <button onClick={()=> setShowModel(true)}>showModal</button>
+        </div>
+
     </div>
 
   );
