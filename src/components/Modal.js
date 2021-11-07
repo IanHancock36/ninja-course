@@ -9,5 +9,5 @@ export default function Modal({children,handleClose}) {
             </div>
             
         </div>
-    ))
+    ),document.body)
 }
