@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ReactDom from 'react-dom'
 import './App.css';
 import Title from './components/Title'
 import Modal from './components/Modal'
