@@ -5,11 +5,11 @@ import { useState } from 'react/cjs/react.development'
 export default function NewEventForm() {
 const [title,setTitle] = useState("")
 const [date,setDate] = useState(" ")
-// const handleChange = (e) =>{
-// console.log(e.target.value)
-// setTitle(e.target.value)
 
-// }
+const resetForm =() => {
+    setTitle(" ")
+    setDate (" ")
+}
     return (
       <form className="new-event-form">
           <label >
@@ -22,6 +22,7 @@ const [date,setDate] = useState(" ")
           </label>
           <button>Submit</button>
           <p>title- {title}, date- {date}</p>
+          <p onClick={resetForm}>Reset Form </p>
       </form>
     )
 }
