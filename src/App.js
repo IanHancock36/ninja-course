@@ -3,6 +3,7 @@ import ReactDom from 'react-dom'
 import './App.css';
 import Title from './components/Title'
 import Modal from './components/Modal'
+import NewEventForm from './components/NewEventForm';
 function App() {
   const [showModal, setShowModel] = useState(false)
   const [showEvents, setShowEvents] = useState(true)
@@ -48,10 +49,10 @@ const handleClose = () => {
       </Modal> */}
       {showModal && 
       <Modal handleClose={handleClose}>
-        <h2>HEY THERE YOU KNOW ME ALL TO WELL</h2>
+     <NewEventForm/>
         </Modal>}
         <div>
-          <button onClick={()=> setShowModel(true)}>showModal</button>
+          <button onClick={()=> setShowModel(true)}>Add New Event</button>
         </div>
 
     </div>
