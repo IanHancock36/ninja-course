@@ -28,9 +28,7 @@ function App() {
     })
 
   }
-const handleClose = () => {
-  setShowModel(false)
-}
+
   const Mysubtitle = "All the latest events in my crazy brain"
   return (
     <div className="App">
@@ -47,12 +45,13 @@ const handleClose = () => {
       {showEvents && events.map((event, index) => (
         <div key={event.id}>
           <h2>{index} - {event.title}</h2>
+          <p>{event.location} -{event.date}</p>
           <button onClick={() => handleCLick(event.id)}>delete event</button>
         </div>
       ))}
     
       {showModal && 
-      <Modal handleClose={handleClose}>
+      <Modal >
      <NewEventForm addEvent={addEvent} />
         </Modal>}
         <div>
