@@ -2,7 +2,7 @@ import './NewEventForm.css'
 import React from 'react'
 import { useState } from 'react/cjs/react.development'
 
-export default function NewEventForm() {
+export default function NewEventForm({addEvent}) {
 const [title,setTitle] = useState("")
 const [date,setDate] = useState(" ")
 
@@ -15,8 +15,12 @@ const handleSubmit = (e) =>{
  const event = {
      title : title,
      date: date, 
-     id: 
+     id: Math.floor(Math.random()* 10000)
  }
+ addEvent(event)
+ console.log(event)
+ resetForm()
+
 }
     return (
       <form className="new-event-form" onSubmit={handleSubmit}>
@@ -34,8 +38,7 @@ const handleSubmit = (e) =>{
             {/* changing value its putting the state inside the value  */}
           </label>
           <button>Submit</button>
-          <p>title- {title}, date- {date}</p>
-          <p onClick={resetForm}>Reset Form </p>
+          
       </form>
     )
 }

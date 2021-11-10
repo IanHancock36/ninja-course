@@ -8,10 +8,16 @@ function App() {
   const [showModal, setShowModel] = useState(false)
   const [showEvents, setShowEvents] = useState(true)
   const [events, setEvents] = useState([
-    { title: "Ian loves Cake", id: 1 },
-    { title: "Ian eats the Cake", id: 2 },
-    { title: "Ian stomach is upset", id: 3 },
+   
   ])
+  // the new event you want to add to this state where this function
+  // will allow the events made in the form will be returned here in a list.
+
+  const addEvent = (event) => {
+    setEvents((preEvents)=> {
+        return[...preEvents,event]
+    })
+  }
   const handleCLick = (id) => {
     console.log(id)
     setEvents((prevEvents) => {
@@ -43,13 +49,10 @@ const handleClose = () => {
           <button onClick={() => handleCLick(event.id)}>delete event</button>
         </div>
       ))}
-      {/* <Modal>
-        <h2>10% off Coupon Code!!</h2>
-        <p>Use the code OHMYGOD! at checkout.</p>
-      </Modal> */}
+    
       {showModal && 
       <Modal handleClose={handleClose}>
-     <NewEventForm/>
+     <NewEventForm addEvent={addEvent}/>
         </Modal>}
         <div>
           <button onClick={()=> setShowModel(true)}>Add New Event</button>
