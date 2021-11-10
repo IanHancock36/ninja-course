@@ -17,6 +17,7 @@ function App() {
     setEvents((preEvents)=> {
         return[...preEvents,event]
     })
+    setShowModel(false)
   }
   const handleCLick = (id) => {
     console.log(id)
@@ -52,7 +53,7 @@ const handleClose = () => {
     
       {showModal && 
       <Modal handleClose={handleClose}>
-     <NewEventForm addEvent={addEvent}/>
+     <NewEventForm addEvent={addEvent} />
         </Modal>}
         <div>
           <button onClick={()=> setShowModel(true)}>Add New Event</button>
