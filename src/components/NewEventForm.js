@@ -10,8 +10,16 @@ const resetForm =() => {
     setTitle(" ")
     setDate (" ")
 }
+const handleSubmit = (e) =>{
+ e.preventDefault()
+ const event = {
+     title : title,
+     date: date, 
+     id: 
+ }
+}
     return (
-      <form className="new-event-form">
+      <form className="new-event-form" onSubmit={handleSubmit}>
           <label >
               <span>Event Title : </span>
           <input type="text" 
